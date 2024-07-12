@@ -18,8 +18,11 @@ use App\Http\Controllers\HomeController;
 Route::get('/', HomeController::class);
 
 Route::controller(CursoController::class)->group(function () {
-        Route::get('curso', 'index');
-        Route::get('curso/create', 'create');
-        Route::get('curso/{curso}', 'show');
+        Route::get('curso', 'index')->name('cursos.index');
+        Route::get('curso/create', 'create')->name('cursos.create');
+
+        Route::post('curso', 'store')->name('curso.store');
+
+        Route::get('curso/{curso}', 'show')->name('cursos.show');
     }
 );
