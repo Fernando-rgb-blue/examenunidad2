@@ -15,13 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Nombre del curso
             $table->text('descripcion'); // Descripción del curso
-            $table->string('codigo')->unique(); // Código del curso
-            $table->integer('duracion')->unsigned(); // Duración del curso en horas
-            $table->date('fecha_inicio'); // Fecha de inicio del curso
-            $table->decimal('precio', 8, 2); // Precio del curso
-            $table->string('instructor'); // Nombre del instructor del curso
-            $table->integer('capacidad_maxima')->unsigned(); // Capacidad máxima de estudiantes
-            $table->boolean('activo')->default(true); // Estado del curso (activo/inactivo)
+            $table->text('categoria'); // Código del curso
             $table->timestamps();
 
         });
